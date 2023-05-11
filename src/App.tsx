@@ -6,16 +6,23 @@ import { AppContext } from './components/contextProvider';
 import LoadingIcon from './components/Loading';
 import { translationsData } from './constants/locale';
 import { router } from './routes';
-import { globalCSS } from '@oasis-engine/editor-design-system';
+import { globalCSS } from '@galacean/editor-ui';
 
 function App() {
   const context = useContext(AppContext);
 
   useEffect(() => {
-    globalCSS({body: {
-      backgroundColor: "$slate1",
-      minHeight: "100vh"
-    }});
+    globalCSS({
+      body: {
+        backgroundColor: "$slate1",
+        minHeight: "100vh",
+      },
+      figure: {
+        textAlign: 'center',
+        fontSize: '12px',
+        color: 'var(--colors-slate11)',
+      }
+    });
   }, []);
 
   const lang = context.lang === 'cn' ? 'zh-CN' : 'en';

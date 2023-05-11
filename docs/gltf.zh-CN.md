@@ -11,7 +11,7 @@ label: Resource
 
 glTF 的产物一般分为（.gltf + .bin + png）或者 (.glb)，前者适合图片体积大的场景，所以将图片和模型拆分开来，可以异步加载模型和纹理；后者适合模型文件较大的场景，会将所有数据进行二进制保存，需要等所有数据解析完毕才能展示模型。
 
-glTF 是目前 Oasis 推荐的首选 3D 场景传输格式，Oasis 对 glTF 的核心功能和插件都做了很好的支持。
+glTF 是目前 Galacean 推荐的首选 3D 场景传输格式，Galacean 对 glTF 的核心功能和插件都做了很好的支持。
 
 <playground src="gltf-loader.ts"></playground>
 
@@ -20,7 +20,7 @@ glTF 是目前 Oasis 推荐的首选 3D 场景传输格式，Oasis 对 glTF 的�
 首先，我们可以通过 [ResourceManager](${api}core/ResourceManager#load) 加载一个 glTF 文件，如下代码：
 
 ```typescript
-import { GLTFResource } from "oasis-engine";
+import { GLTFResource } from "@galacean/engine";
 
 const gltfResource = await this.engine.resourceManager.load<GLTFResource>("https://***.gltf");
 ```
@@ -28,7 +28,7 @@ const gltfResource = await this.engine.resourceManager.load<GLTFResource>("https
 加载完成后，我们拿到了 1 份 [GLTFResource](${api}loader/GLTFResource)，里面有很多解析产物，一般情况下，我们只需要把解析得到的 [defaultSceneRoot](${api}loader/GLTFResource#defaultSceneRoot) 添加到引擎中即可，如下代码：
 
 ```typescript
-import { GLTFResource } from "oasis-engine";
+import { GLTFResource } from "@galacean/engine";
 
 // 此处省略引擎初始化代码...
 const rootEntity = engine.sceneManager.activeScene.createRootEntity();
@@ -119,7 +119,7 @@ if (variants) {
 
 ## 插件支持
 
-Oasis 目前支持以下 glTF 插件，若 glTF 文件中包含相应插件，则会自动加载相应功能：
+Galacean 目前支持以下 glTF 插件，若 glTF 文件中包含相应插件，则会自动加载相应功能：
 
 | 插件 | 功能 |
 | :-- | :-- |

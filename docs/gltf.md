@@ -11,7 +11,7 @@ As [glTF Official Website](https://www.khronos.org/gltf/) described, **glTF**（
 
 The products of glTF are generally divided into (.gltf + .bin + png) or (.glb), the former is suitable for scenes with large pictures, so the pictures and models are separated, and models and textures can be loaded asynchronously; the latter is suitable for models For scenarios with large files, all data will be stored in binary, and the model needs to be parsed after all data is parsed.
 
-glTF is currently the preferred 3D scene transmission format recommended by Oasis. Oasis has made good support for the core functions and plugins of glTF.
+glTF is currently the preferred 3D scene transmission format recommended by Galacean. Galacean has made good support for the core functions and plugins of glTF.
 
 <playground src="gltf-loader.ts"></playground>
 
@@ -20,7 +20,7 @@ glTF is currently the preferred 3D scene transmission format recommended by Oasi
 First, we can load a glTF file by [ResourceManager](${api}core/ResourceManager#load), as follows:
 
 ```typescript
-import { GLTFResource } from "oasis-engine";
+import { GLTFResource } from "@galacean/engine";
 
 const gltfResource = await this.engine.resourceManager.load<GLTFResource>("https://***.gltf");
 ```
@@ -28,7 +28,7 @@ const gltfResource = await this.engine.resourceManager.load<GLTFResource>("https
 After loading, we got one [GLTFResource](${api}loader/GLTFResource), there are many analytical products inside, in general, we only need to get the parsing [defaultSceneRoot](${api}loader/GLTFResource#defaultSceneRoot) add to the engine, as follows:
 
 ```typescript
-import { GLTFResource } from "oasis-engine";
+import { GLTFResource } from "@galacean/engine";
 
 // The engine initialization code is omitted here ...
 const rootEntity = engine.sceneManager.activeScene.createRootEntity();
@@ -119,7 +119,7 @@ if (variants) {
 
 ## Plugins support
 
-Oasis currently supports the following glTF plugins, if the corresponding plugin is included in the glTF file, the corresponding capability is automatically loaded:
+Galacean currently supports the following glTF plugins, if the corresponding plugin is included in the glTF file, the corresponding capability is automatically loaded:
 
 | Plugin | Feature |
 | :-- | :-- |

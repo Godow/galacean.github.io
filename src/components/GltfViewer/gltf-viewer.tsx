@@ -2,6 +2,8 @@
 /* eslint no-multi-assign: "off" */
 /* eslint no-param-reassign: ["error", { "props": false }] */
 /* eslint no-underscore-dangle: 0 */
+import { DecodeMode, downloadArrayBuffer, IBLBaker, SphericalHarmonics3Baker, toBuffer } from "@galacean/tools-baker";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   AmbientLight,
   AnimationClip,
@@ -30,18 +32,9 @@ import {
   Vector3,
   WebGLEngine
 } from "@galacean/engine";
-import { OrbitControl } from "@galacean/engine-toolkit";
-import {
-  BakerResolution,
-  DecodeMode,
-  downloadArrayBuffer,
-  IBLBaker,
-  SphericalHarmonics3Baker,
-  toBuffer
-} from "@galacean/tools-baker";
-import * as dat from "dat.gui";
-import { useEffect } from "react";
-import { SimpleDropzone } from "simple-dropzone";
+import React, { useEffect } from "react";
+import * as dat from 'dat.gui';
+import { SimpleDropzone } from 'simple-dropzone';
 import "./gltf-viewer.less";
 
 const envList = {

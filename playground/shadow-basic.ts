@@ -14,7 +14,6 @@ import {
   Vector3,
   WebGLEngine,
 } from "@galacean/engine";
-
 async function init() {
   const engine = await WebGLEngine.create({ canvas: "canvas" });
   engine.canvas.resizeByClientSize();

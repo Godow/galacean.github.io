@@ -1,6 +1,6 @@
 ---
-order: 1
-title: 精灵遮罩
+order: 3
+title: 精灵遮罩组件
 type: 功能
 group: 2D 渲染
 label: Editor-Feature/Rendering-2d
@@ -12,13 +12,13 @@ label: Editor-Feature/Rendering-2d
 
 当我们需要对一个精灵进行遮罩的时候，首先需要创建一个实体，并添加精灵遮罩组件，如下：
 
-![mask-create](https://gw.alipayobjects.com/zos/OasisHub/cb173a1d-addd-4ad0-bf23-83a7817200cd/mask-create.gif)
+![mask-create](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*AxvJRKKT37cAAAAAAAAAAAAADjCHAQ/original)
 
 ## 设置遮罩区域
 
 精灵遮罩组件通过图片来表示遮罩区域，这里我们通过组件的 `sprite` 参数来设置精灵资源，如下：
 
-![mask-sprite](https://gw.alipayobjects.com/zos/OasisHub/cec92229-02a6-404c-a6fb-f95088bd40aa/mask-sprite.gif)
+![mask-sprite](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*amcjQZ9peRkAAAAAAAAAAAAADjCHAQ/original)
 
 ## 设置精灵的遮罩类型
 
